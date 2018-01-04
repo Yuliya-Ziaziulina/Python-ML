@@ -1,4 +1,4 @@
-import Iris
+import Perceptron
 import pandas as pd
 df = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', header=None)
 df.tail()
@@ -16,7 +16,7 @@ plt.legend(loc='upper left')
 plt.show()
 
 
-ppn = Iris.Perceptron(eta=0.1, n_iter=50)
+ppn = Perceptron.Perceptron(eta=0.1, n_iter=50)
 ppn.fit(X, y)
 plt.plot(range(1, len(ppn.errors_) + 1), ppn.errors_,marker='o')
 plt.xlabel('Epochs')
